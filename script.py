@@ -14,7 +14,7 @@ def configure_sftp():
     
     with open(sshd_config_path, 'a') as sshd_config:
         sshd_config.write('\n')
-        sshd_config.write('PasswordAuthetication yes')
+        sshd_config.write('PasswordAuthentication yes')
         sshd_config.write('\n')
         sshd_config.write('Match Group sftpusers\n')
         sshd_config.write('    ChrootDirectory /srv/sftp\n')
