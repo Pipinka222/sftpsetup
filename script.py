@@ -28,8 +28,8 @@ def create_sftp_user(username):
     print(f"Creating user {username}...")
     os.system('sudo mkdir /srv/sftp')
     os.system('sudo groupadd sftpusers')
-    os.system('sudo useradd -G sftpusers -d /srv/sftp/{username} -s /sbin/nologin {username}')
-    os.system('sudo passwd {username}')
+    os.system(f'sudo useradd -G sftpusers -d /srv/sftp/{username} -s /sbin/nologin {username}')
+    os.system(f'sudo passwd {username}')
     print(f"User {username} created and configured for SFTP.") 
 
 def restart_sshd():
@@ -39,8 +39,8 @@ def restart_sshd():
     
 def create_start_directory(username):
     name=input("Enter the name of first directory: ")
-    os.system('sudo mkdir /srv/sftp/{name}')
-    os.system('sudo chown {username}:sftpusers /srv/sftp/{name}')
+    os.system(f'sudo mkdir /srv/sftp/{name}')
+    os.system(f'sudo chown {username}:sftpusers /srv/sftp/{name}')
     
 
 def main():
