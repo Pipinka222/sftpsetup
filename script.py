@@ -29,10 +29,7 @@ def create_sftp_user(username):
     os.system('sudo mkdir /srv/sftp')
     os.system('sudo groupadd sftpusers')
     os.system('sudo useradd -G sftpusers -d /srv/sftp/{username} -s /sbin/nologin {username}')
-    password=input("Enter the password for this user: ").strip()
     os.system('sudo passwd {username}')
-    os.system('password')
-    os.system('password')
     print(f"User {username} created and configured for SFTP.") 
 
 def restart_sshd():
